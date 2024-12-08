@@ -18,40 +18,100 @@
         </label>
         <label class="logo">Score Board</label>
         <ul>
-            <li><a  href="/scoresheet.html">Score Sheet</a></li>
-            <li><a href="#">CGPA</a></li>
-            <li><a class="active" href="#">GPA</a></li>
+            <li><a  href="#" data-page="scoresheet">Score Sheet</a></li>
+            <li><a href="#" data-page="gpa">CGPA</a></li>
+            <li><a class="active" href="#" data-page="gpa">GPA</a></li>
 
         </ul>
     </nav>
         
         
-    <div id="mainbox">
-        <div class="container">
-            <label class="coursenumber underline"> Course</label>
-            <label class="creditinputbar"> Credits</label>
-            <label class="gradeselect"> Grade Achieved</label><br><br>
-            <div class="box">
-                <div class="Result">
-                    <label>Result:</label>
+    <section id="gpa" class="active">
+        <div id="mainbox">
+            <div class="container">
+                <label class="coursenumber underline"> Course</label>
+                <label class="creditinputbar"> Credits</label>
+                <label class="gradeselect"> Grade Achieved</label><br><br>
+                <div class="box">
+                    <div class="Result">
+                        <label>Result:</label>
+                    </div>
+                    <div class="cgpa">
+                        <label id="cgpa"></label>
+                    </div>
+            
                 </div>
-                <div class="cgpa">
-                    <label id="cgpa"></label>
-                </div>
-        
+               
             </div>
-           
-        </div>
-        
-        <div class="buttons">
             
-            <button id="addcourse">+ Add Course</button>
-            <button id="clear">Clear</button>
-            
+            <div class="buttons">
+                
+                <button id="addcourse">+ Add Course</button>
+                <button id="clear">Clear</button>
+                
+            </div>
         </div>
-    </div>
+    </section>
     
-   
+    <section id="scoresheet">
+        <table>
+            <tr>
+                <th>Grade</th>
+                <th>Mark Range</th>
+                <th>Result</th>
+            </tr>
+            <tr>
+                <td class="dcolor"> O</td>
+                <td>91 - 100</td>
+                <td>Pass</td>
+            </tr>
+            <tr>
+                <td class="dcolor"> A+</td>
+                <td>81 - 90</td>
+                <td>Pass</td>
+            </tr>
+            <tr>
+                <td class="dcolor"> A</td>
+                <td>71 - 80</td>
+                <td>Pass</td>
+            </tr>
+            <tr>
+                <td class="dcolor"> B+</td>
+                <td>61 - 70</td>
+                <td>Pass</td>
+            </tr>
+            <tr>
+                <td class="dcolor"> B</td>
+                <td>56 - 60</td>
+                <td>Pass</td>
+            </tr>
+            <tr>
+                <td class="dcolor"> C</td>
+                <td> 50 - 55</td>
+                <td>Pass</td>
+            </tr>
+            <tr>
+                <td class="dcolor"> W</td>
+                <td>0</td>
+                <td>Pass</td>
+            </tr>
+            <tr>
+                <td class="dcolor"> *</td>
+                <td>0</td>
+                <td>Pass</td>
+            </tr>
+            <tr>
+                <td class="dcolor"> AB</td>
+                <td>0</td>
+                <td>Pass</td>
+            </tr>
+            <tr>
+                <td class="dcolor"> F</td>
+                <td>0 - 45</td>
+                <td>Fail</td>
+            </tr>
+        </table>
+    </section>
     <script src="script.js"></script>
 </body>
 </html>

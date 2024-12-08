@@ -97,3 +97,25 @@ clear.addEventListener('click', () =>{
     form.querySelectorAll('input, select').forEach(input => input.value = '');
     document.getElementById('cgpa').innerHTML = '';
 });
+document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent default anchor behavior
+        const targetPage = link.getAttribute('data-page');
+
+        // Remove 'active' class from all sections
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.remove('active');
+        });
+
+        // Add 'active' class to the targeted section
+        if (targetPage) {
+            const targetSection = document.getElementById(targetPage);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+        }
+    });
+});
+
+// Initially display the first section (optional)
+document.getElementById('gpa').classList.add('active');

@@ -229,3 +229,10 @@ td{
 .dcolor{
     background-color: #D1D9DE;
 }
+
+section {
+    display: none; /* Hide all sections by default */
+}
+section.active {
+    display: block; /* Display only the active section */
+}

@@ -1,5 +1,6 @@
 const container = document.querySelector(".container");
 const addbtn = document.getElementById("addcourse");
+const reference = document.querySelector('div.box');
 
 const gradeMap ={
     "O": 10,
@@ -14,21 +15,23 @@ let courseid =0;
 
 function createInput(courseid){
     //credit input
+    const courseDiv = document.createElement('div');
     const courseID = document.createElement('label');
     courseID.innerHTML = courseid;
-    const creditLabel = document.createElement('label');
-    creditLabel.innerHTML = "Credit";
+    courseID.classList.add('coursenumber');
+
 
     const creditInput = document.createElement('input');
     creditInput.type = "number";    
     creditInput.id =`credit${courseid}`;
+    creditInput.classList.add('creditinputbar');
 
 
 
-    const gradeLabel = document.createElement('label');
-    gradeLabel.innerHTML = "Grade:";
+
     const grade = document.createElement('select');
     grade.id = `grade${courseid}`;
+    grade.classList.add("gradeselect");
 
     
 
@@ -51,12 +54,11 @@ function createInput(courseid){
     
     
     // newInput.type = 'number';
-    container.appendChild(courseID);
-    container.appendChild(creditLabel);
-    container.appendChild(creditInput);
-    container.appendChild(gradeLabel);
-    container.appendChild(grade);
-    container.appendChild(document.createElement("br"));
+    courseDiv.appendChild(courseID);
+    courseDiv.appendChild(creditInput);
+    courseDiv.appendChild(grade);
+    courseDiv.appendChild(document.createElement("br"));
+    container.insertBefore(courseDiv,reference);
 };
 courseid++;
 createInput(courseid)
@@ -83,5 +85,11 @@ function gpa(courseid){
 };
 function updateGPA(courseid){
     const result = gpa(courseid);
-    document.getElementById('cgpa').innerHTML = `Your gpa is ${result.toFixed(2)}`;
+    document.getElementById('cgpa').innerHTML = `Result  ${result.toFixed(2)}`;
 }
+const clear = document.getElementById("clear");
+clear.addEventListener('click', () =>{
+    const form = document.querySelector('.container');
+    form.querySelectorAll('input, select').forEach(input => input.value = '');
+    document.getElementById('cgpa').innerHTML = '';
+});

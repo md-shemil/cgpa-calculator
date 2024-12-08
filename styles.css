@@ -95,3 +95,64 @@ a.active,a:hover{
     }
 
 }
+
+/* adding css for coursenumber */
+.coursenumber{
+    margin-left: 10%;
+    width: 30px;
+    height: 30px;
+}
+label.coursenumber{
+    text-decoration: underline;
+}
+.creditinputbar{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 20px;
+}
+label.creditinputbar{
+    text-decoration: underline;
+}
+.gradeselect{
+    margin-left: 30px;
+
+}
+input.gradeselect{
+    width: 100px;
+}
+label.gradeselect{
+    text-decoration: underline;
+    margin-left: 100px;
+}
+.container{
+    background-color: #D0D9DF;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+/* buttons divison */
+.buttons{
+    
+    margin-top: 30px;
+    width: 60%;
+    margin-left: 30%;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    width: 100px;
+    height: 30px;
+    margin-left: 100px;
+    background-color: #F4F6F6;
+    border-radius: 3px;
+}
+
+.box{
+    text-align: center;
+    width: 40%;
+    height: 20px;
+    background-color: #FFFFFF;
+    margin-left: 30%;
+}

@@ -14,6 +14,8 @@ let courseid =0;
 
 function createInput(courseid){
     //credit input
+    const courseID = document.createElement('label');
+    courseID.innerHTML = courseid;
     const creditLabel = document.createElement('label');
     creditLabel.innerHTML = "Credit";
 
@@ -49,6 +51,7 @@ function createInput(courseid){
     
     
     // newInput.type = 'number';
+    container.appendChild(courseID);
     container.appendChild(creditLabel);
     container.appendChild(creditInput);
     container.appendChild(gradeLabel);

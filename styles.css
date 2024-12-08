@@ -205,3 +205,27 @@ button{
 .cgpa{
     width: 58%;
 }
+table{
+    width: 30%;
+    margin: 20px auto;
+    border-collapse: separate;
+    padding: 20px;
+    height: 80vh;
+   
+}
+th,td{
+    text-align: center;
+    border: 1px solid black;
+    
+}
+th{
+    background-color: #D1D9DE;
+    border-radius: 4px;
+}
+td{
+    background-color: #F4F6F6;
+    border-radius: 4px;
+}
+.dcolor{
+    background-color: #D1D9DE;
+}

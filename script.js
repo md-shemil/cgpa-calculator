@@ -16,9 +16,13 @@ let courseid =0;
 function createInput(courseid){
     //credit input
     const courseDiv = document.createElement('div');
+    courseDiv.classList.add('coursediv');
+    const boxDiv = document.createElement('div');
+    boxDiv.classList.add('coursebox');
+    boxDiv.classList.add('coursenumber');
     const courseID = document.createElement('label');
-    courseID.innerHTML = courseid;
-    courseID.classList.add('coursenumber');
+    courseID.innerHTML = `${courseid}.`;
+    boxDiv.appendChild(courseID);
 
 
     const creditInput = document.createElement('input');
@@ -54,7 +58,7 @@ function createInput(courseid){
     
     
     // newInput.type = 'number';
-    courseDiv.appendChild(courseID);
+    courseDiv.appendChild(boxDiv);
     courseDiv.appendChild(creditInput);
     courseDiv.appendChild(grade);
     courseDiv.appendChild(document.createElement("br"));
@@ -85,7 +89,7 @@ function gpa(courseid){
 };
 function updateGPA(courseid){
     const result = gpa(courseid);
-    document.getElementById('cgpa').innerHTML = `Result  ${result.toFixed(2)}`;
+    document.getElementById('cgpa').innerHTML = result.toFixed(2);
 }
 const clear = document.getElementById("clear");
 clear.addEventListener('click', () =>{

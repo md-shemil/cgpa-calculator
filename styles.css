@@ -106,7 +106,7 @@ a.active,a:hover{
 }
 
 .coursenumber{
-    margin-left: 10%;
+    margin-left: 5%;
     width: 30px;
     height: 30px;
 }
@@ -125,12 +125,12 @@ a.active,a:hover{
 
 /* credi input bar section */
 .creditinputbar{
-    margin-left: 50px;
-    width: 150px;
+    margin-left: 10%;
+    width: 15%;
 }
 input.creditinputbar{
     border-radius: 4px;
-    width: 200px;
+    width: 30%;
     height: 30px;
 }
 label.creditinputbar{
@@ -139,14 +139,14 @@ label.creditinputbar{
 .gradeselect{
 
     border-radius: 4px;
-    margin-left: 50px;
-    width: 120px;
+    margin-left: 15%;
+    width: 15%;
     height: 30px;
 
 }
 label.gradeselect{
     text-decoration: underline;
-    margin-left: 100px;
+    margin-left: 30%;
 }
 .container{
     background-color: #D0D9DF;
@@ -238,6 +238,10 @@ section.active {
 
 /* mobile and tablets */
 @media only screen and (max-width: 768px) {
+label.logo{
+        font-size: 25px;
+        padding-left: 40px;
+}
 .container{
     width: 90%;
     margin-left: 5%;

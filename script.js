@@ -114,6 +114,19 @@ document.querySelectorAll('nav ul li a').forEach(link => {
                 targetSection.classList.add('active');
             }
         }
+
+        // Remove 'active' class from all nav links
+        document.querySelectorAll('nav ul li a').forEach(navLink => {
+            navLink.classList.remove('active');
+        });
+
+        // Add 'active' class to the clicked nav link
+        link.classList.add('active');
+        // Close the toggle menu
+        const toggleCheckbox = document.getElementById('check'); // Assuming #check is the toggle checkbox
+        if (toggleCheckbox) {
+            toggleCheckbox.checked = false; // Uncheck the checkbox to close the menu
+        }
     });
 });
 

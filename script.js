@@ -89,13 +89,13 @@ function gpa(courseid){
 };
 function updateGPA(courseid){
     const result = gpa(courseid);
-    document.getElementById('cgpa').innerHTML = result.toFixed(2);
+    document.getElementById('gparesult').innerHTML = result.toFixed(2);
 }
 const clear = document.getElementById("clear");
 clear.addEventListener('click', () =>{
     const form = document.querySelector('.container');
     form.querySelectorAll('input, select').forEach(input => input.value = '');
-    document.getElementById('cgpa').innerHTML = '';
+    document.getElementById('gparesult').innerHTML = '';
 });
 document.querySelectorAll('nav ul li a').forEach(link => {
     link.addEventListener('click', (e) => {
@@ -129,6 +129,67 @@ document.querySelectorAll('nav ul li a').forEach(link => {
         }
     });
 });
+
+
+
+let semnumber = 0;
+const cgpacontainer = document.querySelector(".cgpacontainer");
+const cgpabox = document.querySelector("div.cgpabox");
+const addsembtn = document.getElementById("addsemester");
+
+function createSemester(semnumber){
+    semDiv = document.createElement('div');
+    semDiv.classList.add('coursediv');
+    sembox = document.createElement("div");
+    sembox.classList.add('coursebox');
+    semNo = document.createElement('label');
+    semNo.innerHTML = semnumber;
+    sembox.appendChild(semNo);
+
+    semCredit = document.createElement('input');
+    semCredit.type = 'number'
+    semCredit.id = `semCredit${semnumber}`
+    semCredit.classList.add('creditinputbar');
+    semGPA = document.createElement('input');
+    semGPA.type = 'number';
+    semGPA.id = `semGPA${semnumber}`;
+    semGPA.classList.add("gradeselect");
+    semDiv.appendChild(sembox);
+    semDiv.appendChild(semCredit);
+    semDiv.appendChild(semGPA);
+    cgpacontainer.insertBefore(semDiv,cgpabox);
+
+    semCredit.addEventListener('change',()=>{
+        updateCGPA(semnumber);
+    })
+    semGPA.addEventListener('change',()=>{
+        updateCGPA(semnumber);
+    })
+}
+
+addsembtn.addEventListener('click',()=>{
+    semnumber++;
+    createSemester(semnumber);
+});
+semnumber++;
+createSemester(semnumber);
+function cgpa(semnumber){
+    let totalcredit = 0;
+    let totalgpapoints = 0;
+    for(let i=1;i<=semnumber;i++){
+        const semCredit = parseFloat(document.getElementById(`semCredit${i}`).value)||0;
+        const semgpapoints = parseFloat(document.getElementById(`semGPA${i}`).value)||0;
+        totalcredit += semCredit;
+        totalgpapoints += semCredit * semgpapoints;
+    }
+    let cgpa = (totalgpapoints/totalcredit).toFixed(2);
+    return cgpa;
+
+}
+function updateCGPA(semnumber){
+    let result = cgpa(semnumber);
+    document.getElementById("cgparesult").innerHTML = result;
+}
 
 // Initially display the first section (optional)
 document.getElementById('gpa').classList.add('active');

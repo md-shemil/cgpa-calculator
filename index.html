@@ -19,7 +19,7 @@
         <label class="logo">Score Board</label>
         <ul>
             <li><a  href="#" data-page="scoresheet">Score Sheet</a></li>
-            <li><a href="#" data-page="gpa">CGPA</a></li>
+            <li><a href="#" data-page="cgpa">CGPA</a></li>
             <li><a class="active" href="#" data-page="gpa">GPA</a></li>
 
         </ul>
@@ -27,7 +27,6 @@
         
         
     <section id="gpa" class="active">
-        <div id="mainbox">
             <div class="container">
                 <label class="coursenumber underline"> Course</label>
                 <label class="creditinputbar"> Credits</label>
@@ -37,7 +36,7 @@
                         <label>Result:</label>
                     </div>
                     <div class="cgpa">
-                        <label id="cgpa"></label>
+                        <label id="gparesult"></label>
                     </div>
             
                 </div>
@@ -50,8 +49,30 @@
                 <button id="clear">Clear</button>
                 
             </div>
-        </div>
     </section>
+
+    <section id="cgpa">
+        <div class="cgpacontainer">
+            <label class="semnumber underline">Semester</label>
+            <label class="semCredits" >Credits</label>
+            <label class="semgpa">GPA</label>
+            
+            <div class="cgpabox">
+                <div class="Result">
+                    <label>Result:</label>
+                </div>
+                <div class="cgpa">
+                    <label id="cgparesult"></label>
+                </div>
+            </div>
+        </div>
+        <div class="buttonarea">
+            <button id="addsemester">+ Add Semester</button>
+            <button id="cgpaclear">Clear</button>
+        </div>
+
+    </section>
+
     
     <section id="scoresheet">
         <table>
